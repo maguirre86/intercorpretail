@@ -5,8 +5,8 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.sql.Date;
 
-@Entity
-@Table(name = "CLIENTE", schema = "RV_OWNER", catalog = "")
+//@Entity
+//@Table(name = "CLIENTE", schema = "RV_OWNER", catalog = "")
 public class ClienteDao implements Serializable {
 
 
