@@ -10,7 +10,7 @@ public class ClienteController {
 
     @ApiOperation(value = "Crear nuevo cliente",response=String.class)
     @GetMapping(value = "/creacliente")
-    public String obtenerHolaMunto(){
+    public String crearClientes(){
         return "Hola Mundo";
     }
 }

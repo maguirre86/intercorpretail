@@ -1,18 +1,25 @@
 package pe.com.intercorpretail.clientes.dao;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
-//@Entity
-//@Table(name = "CLIENTE", schema = "RV_OWNER", catalog = "")
+@Entity
+@Table(name = "CLIENTE")
 public class ClienteDao implements Serializable {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Integer id;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "apellido")
     private String apellido;
+    @Column(name = "edad")
     private Integer edad;
+    @Column(name = "fecha_nacimiento")
+    @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
 
     public String getNombre() {
