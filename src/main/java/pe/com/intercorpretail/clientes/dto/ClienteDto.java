@@ -2,21 +2,16 @@ package pe.com.intercorpretail.clientes.dto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class ClienteDto {
 
-    private Integer id;
     private String nombre;
     private String apellido;
     private Integer edad;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date fechaNacimiento;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getNombre() {
         return nombre;

@@ -16,7 +16,7 @@ public class ClienteDao implements Serializable {
     private String nombre;
     @Column(name = "apellido")
     private String apellido;
-    @Column(name = "edad")
+    @Column(name = "edad", length = 3)
     private Integer edad;
     @Column(name = "fecha_nacimiento")
     @Temporal(TemporalType.DATE)
