@@ -37,16 +37,18 @@ public class ClienteService {
     	double varianza = 0.0;
     	double desviacion= 0.0;
     	double totalMuestra= clienteDao.size() -1;
-    	double media = (clienteDao.stream().mapToInt(s -> s.getEdad()).sum())/clienteDao.size();
     	 Map<String, Double> retorno = new HashMap<String, Double>();
+    	 double media = (clienteDao.size()>0 ?  clienteDao.stream().mapToInt(s -> s.getEdad()).sum()/clienteDao.size() : 0.0);
     	
     	for(ClienteDao cdao : clienteDao){
     		   double rango;
     		   rango = Math.pow(cdao.getEdad() - media, 2f);
     		   varianza = varianza + rango;
     		  }
-    		  varianza = varianza / totalMuestra;
+    		if(totalMuestra > 1) {
+    		  varianza = varianza/totalMuestra;
     		  desviacion = Math.sqrt(varianza);
+    		}
     		  
     		  retorno.put("media", media);
     		  retorno.put("desviacion", desviacion);
