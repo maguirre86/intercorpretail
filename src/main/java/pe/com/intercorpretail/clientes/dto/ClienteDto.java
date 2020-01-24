@@ -9,10 +9,12 @@ public class ClienteDto {
     private String nombre;
     private String apellido;
     private Integer edad;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.SCALAR, pattern = "dd-MM-yyyy", locale = "es-AR", timezone = "America/Argentina" )
     private Date fechaNacimiento;
 
-
+    public ClienteDto(){
+    }
+    
     public String getNombre() {
         return nombre;
     }
